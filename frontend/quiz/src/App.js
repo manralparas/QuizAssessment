@@ -10,6 +10,7 @@ import Login from "./components/login";
 import Register from "./components/register";
 import Profile from "./components/profile";
 import TeacherLogin from "./components/teacherlogin";
+import Dashboard from "./components/dashboard";
 
 const App = () => {
    const [currentUser, setCurrentUser] = useState(undefined);  
@@ -57,7 +58,7 @@ const App = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <a href="/login" className="nav-link" onClick={logOut}>
+              <a href="/" className="nav-link" onClick={logOut}>
                 LogOut
               </a>
             </li>
@@ -97,6 +98,7 @@ const App = () => {
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/dashboard" component={Dashboard} />
           <Route exact patth="/loginTeacher" component={TeacherLogin} />
         
         </Switch>

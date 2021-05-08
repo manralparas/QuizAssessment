@@ -4,7 +4,7 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import './style.css';
 
-import AuthService from "../services/auth.service";
+import AuthService from "../services/teacherauth.service";
 
 const required = (value) => {
   if (!value) {
@@ -45,7 +45,7 @@ const TeacherLogin = (props) => {
     if (checkBtn.current.context._errors.length === 0) {
       AuthService.login(email, password).then(
         () => {
-          props.history.push("/profile");
+          props.history.push("/dashboard");
           window.location.reload();
         },
         (error) => {
