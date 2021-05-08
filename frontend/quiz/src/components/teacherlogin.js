@@ -15,7 +15,7 @@ const required = (value) => {
     );
   }
 };
-const Login = (props) => {
+const TeacherLogin = (props) => {
   const form = useRef();
   const checkBtn = useRef();
 
@@ -67,7 +67,7 @@ const Login = (props) => {
 
   return (
     <div className="col-md-3 login_container">
-      <h2>Student Log In</h2>
+      <h2>Teacher Log In</h2>
         
 
         <Form onSubmit={handleLogin} ref={form}>
@@ -118,4 +118,5 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default TeacherLogin;
+

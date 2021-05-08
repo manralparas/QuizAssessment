@@ -1,3 +1,6 @@
+::-webkit-scrollbar {
+    display: none;
+}
 .App {
   text-align: center;
 }
@@ -35,4 +38,49 @@
   to {
     transform: rotate(360deg);
   }
+}
+.jumbotron{
+  margin-top:50px;
+  height: 100vh;
+  background-color:#687980;
+}
+.jumbotron > h1{
+  padding: 20px;
+  text-align: center;
+  color:#fefecc
+}
+.bg-orange{
+  background-color: #02475e;
+  color:black
+}
+.section{
+  margin: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.section > h2{
+  margin-top: 20px;
+  padding: 20px;
+}
+.inner{
+  margin-left: 40px;
+  margin-top:100px;
+  color: white;
+}
+.links{
+  font-size: 26px;
+  padding: 10px;
+  color: white;
+  width: 250px;
+  background-color: blue;
+  margin-top: 10px;
+  border: 1px solid blue;
+  display: block;
+  text-decoration: none;
+}
+.links:hover{
+  background-color: white;
+}
+img{
+  margin-left: 40px;
 }
