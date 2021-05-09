@@ -1,0 +1,8 @@
+.container{
+    margin:60px;
+    padding :40px;
+}
+.header{
+    display: flex;
+    justify-content: center;
+}

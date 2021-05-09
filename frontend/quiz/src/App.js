@@ -11,6 +11,7 @@ import Register from "./components/register";
 import Profile from "./components/profile";
 import TeacherLogin from "./components/teacherlogin";
 import Dashboard from "./components/dashboard";
+import CreateCourse from "./components/CreateCourse";
 
 const App = () => {
    const [currentUser, setCurrentUser] = useState(undefined);  
@@ -87,8 +88,21 @@ const App = () => {
             <div className="section">
             <div><h2>The quiz maker for testing students in course in fun way! </h2>
             <div className="inner">
-            <Link className="links" to={"/login"}>Take quiz now</Link>
-            <Link className="links" to={"/loginTeacher"}>Create quiz now</Link>
+              {
+                  currentUser ?(
+                  <div>
+                 <Link className="links" to={"/login"}>Take quiz now</Link>
+                 <Link className="links" to={"/dashboard"}>Create quiz now</Link>
+                  </div>
+            
+                  ):(
+                    <div>
+                    <Link className="links" to={"/login"}>Take quiz now</Link>
+                    <Link className="links" to={"/loginTeacher"}>Create quiz now</Link>
+                    </div>
+                  )
+
+              }
             </div>
             </div>
             <img src={student} height="400px" width="600px"></img>
@@ -99,8 +113,8 @@ const App = () => {
           <Route exact path="/register" component={Register} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact patth="/loginTeacher" component={TeacherLogin} />
-        
+          <Route exact path="/loginTeacher" component={TeacherLogin} />
+          <Route exact path="/createCourse" component={CreateCourse} />
         </Switch>
     </div>
   );

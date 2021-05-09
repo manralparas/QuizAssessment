@@ -1,27 +1,26 @@
 import React from "react";
 import AuthService from "../services/teacherauth.service";
-
+import './dashboardStyle.css';
+import { Link } from "react-router-dom";
 const Dashboard = () => {
-  const currentUser = AuthService.getCurrentUser();
-    if(currentUser.message.role!=="Teacher")
+  const currentUser = AuthService.getCurrentUser().message;
+    if(currentUser.role!=="Teacher")
     return(
         <div><h1>You are not authorized</h1></div>
     )
     else
      return (
     <div className="container">
-      <header className="jumbotron">
+      <div className="header">
         <h3>
-          <strong>{currentUser.message.name}</strong> Profile
+          Welcome {currentUser.name}!
         </h3>
-      </header>
-     <p>
-        <strong>Id:</strong> {currentUser.message.id}
-      </p>
-      <p>
-        <strong>Email:</strong> {currentUser.message.email}
-      </p>
-     
+      </div>
+      <div className="mt-4 d-flex justify-content-center">
+        <Link to="./createCourse">
+        <button className="btn btn-primary">Create New Course +</button>
+        </Link>
+      </div>
     </div>
       
   );
