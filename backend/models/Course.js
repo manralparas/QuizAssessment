@@ -5,6 +5,8 @@ let courseSchema = new Schema({
       type: String,
       required: true
    },
+   code:String,
+   teacherName:String,
    teacher:{
        type:mongoose.Schema.Types.ObjectId,
        ref:"Teacher",
