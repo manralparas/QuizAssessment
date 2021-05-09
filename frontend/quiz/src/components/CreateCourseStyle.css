@@ -1,0 +1,10 @@
+.wrapper{
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.coursename{
+    margin: 20px;
+}
