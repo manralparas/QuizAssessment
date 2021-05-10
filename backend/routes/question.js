@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const mongoose= require('mongoose');
 const Course= require("../models/Course");
 router.post('/question/:id',(req,res)=>{
     let {questionStatement,correct_answer,wrong_answer}=req.body;
@@ -57,6 +58,22 @@ router.put('/publish/:id',(req,res)=>{
                 res.status(200).json(course);
                 }
             });
+        }
+    })
+})
+router.put('/attempted/:id',(req,res)=>{
+    let {userId}= req.body;
+    Course.findById(req.params.id,(err,course)=>{
+        if(err)
+        res.status(400).json({err});
+        else{
+            course.attempted.push(mongoose.Types.ObjectId(userId));
+            course.save((err,save)=>{
+                if(err)
+                res.send(400).json({err})
+                else
+                res.send(200).json(save);
+            })
         }
     })
 })
