@@ -16,7 +16,8 @@ let userSchema = new Schema({
    role:{
        type:String,
        required:true
-   }
+   },
+
 },{
    timestamps: true,
    collection: 'Students'
