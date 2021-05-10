@@ -13,7 +13,8 @@ Course.findOne({name:course_name}).then((course)=>{
             name:course_name,
             code:course_code,
             teacherName:teacher_name,
-            teacher:teacher_id
+            teacher:teacher_id,
+            NumberOfQuestion:0
         });
         course.save().then(response => {
                 res.status(200).json({

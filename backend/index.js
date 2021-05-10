@@ -8,6 +8,7 @@ const courseRoutes=require('./routes/course')
 const authRoutes = require('./routes/auth');
 const teacherauth = require('./routes/teacherauth');
 const teacherCourse = require('./routes/teacherCourse');
+const questionRoutes= require('./routes/question');
 const { db } = require('./models/Student');
 //app
 const app = express();
@@ -27,6 +28,7 @@ app.use('/api', authRoutes);
 app.use('/api',teacherauth);
 app.use('/api',courseRoutes);
 app.use('/api',teacherCourse);
+app.use('/api',questionRoutes);
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log(`Server is running on ${port}`)

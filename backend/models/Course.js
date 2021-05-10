@@ -16,6 +16,12 @@ let courseSchema = new Schema({
        type:mongoose.Schema.Types.ObjectId,
        ref:"Student",
    }],
+   NumberOfQuestion:Number,
+   question:[{
+      questionStatement:String,
+      correct_answer:String,
+      wrong_answer:[String]
+   }],
    quiz:{type:mongoose.Schema.Types.ObjectId,ref:"quiz"}
 },{
    timestamps: true,
