@@ -1,13 +1,24 @@
 import React,{useState} from 'react'
 import './CreateCourseStyle.css';
 import AuthService from "../services/teacherauth.service";
-
-function CreateCourse() {
+import axios from 'axios';
+const API_URL = "http://localhost:8000/api/";
+function CreateCourse(props) {
      const currentUser = AuthService.getCurrentUser().message;
      const [name,setName]=useState("");
      const [code,setCode]=useState("");
      const handleSubmit=()=>{
-        alert(`name = ${name} code = ${code}`);
+            return axios.post(API_URL+"course",{
+                  course_name:name,
+                  course_code:code,
+                  teacher_name:currentUser.name,
+                  teacher_id:currentUser._id
+            }).then((response)=>{
+                  alert("Course Created");
+                  console.log(response);
+                  props.history.push("/dashboard");
+                  window.location.reload();
+            })
 
      }
     return (

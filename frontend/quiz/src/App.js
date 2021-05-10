@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link, Redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import student from './student.png';
@@ -12,6 +12,10 @@ import Profile from "./components/profile";
 import TeacherLogin from "./components/teacherlogin";
 import Dashboard from "./components/dashboard";
 import CreateCourse from "./components/CreateCourse";
+import EditCourse from "./components/EditCourse";
+import Quiz from "./components/Quiz";
+import NotFound from "./components/404";
+import Question from "./components/Question";
 
 const App = () => {
    const [currentUser, setCurrentUser] = useState(undefined);  
@@ -30,7 +34,7 @@ const App = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand navbar-dark bg-orange fixed-top">
+      <nav className="navbar navbar-expand navbar-dark bg-orange">
         <Link to={"/"} className="navbar-brand">
           Navigus
         </Link>
@@ -115,6 +119,11 @@ const App = () => {
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/loginTeacher" component={TeacherLogin} />
           <Route exact path="/createCourse" component={CreateCourse} />
+          <Route exact path="/course/:id" component={EditCourse} />
+          <Route exact path="/course/quiz/:id" component={Quiz} />
+          <Route exact path="/course/question/:id/" component={Question} />
+          <Route path='/404' component={NotFound} />
+          <Redirect to="/404"/>
         </Switch>
     </div>
   );

@@ -31,3 +31,11 @@
     justify-content: center;
     margin-top :50px;
 }
+.question_title{
+    margin: 40px;
+}
+.publish{
+    position: relative;
+    left: 30%;
+    margin-top:50px;
+}
