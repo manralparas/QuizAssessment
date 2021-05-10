@@ -1,0 +1,39 @@
+.container{
+    height:100vh;
+  background-color:#687980;
+}
+.score-section{
+    margin-top: 100px;
+    margin-left: 400px;
+}
+.score-section > button{
+    margin-left: 60px;
+}
+.question-section{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+.question-count > span{
+    font-size: 22px;
+    font-weight: 500;
+}
+.question-text{
+    background-color: orchid;
+    color: white;
+    font-size: 20px;
+    border: solid 2px gray;
+    border-radius: 40px;
+    padding: 50px;
+    height: 150px;
+}
+.answer-section{
+    display: flex;
+    margin:50px;
+    justify-content: space-between;
+}
+.answer-section > button{
+    margin:50px;
+    width:200px;
+    height:60px;
+}

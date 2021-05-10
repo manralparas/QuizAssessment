@@ -12,6 +12,11 @@ router.get('/quiz/:id',(req,res)=>{
         res.status(200).json({response:course});
     })
 })
+router.get('/course',(req,res)=>{
+    Course.find({},(err,course)=>{
+        res.status(200).json({response:course});
+    })
+})
 router.put('/course/:id',(req,res)=>{
     let {course_name,course_code}=req.body;
             const course= new Course({
