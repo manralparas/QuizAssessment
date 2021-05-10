@@ -18,10 +18,15 @@ function Quiz(props) {
 
   },[])
   const publishQuiz=()=>{
+      console.log(point);
+      console.log(passing)
       return axios.put(API_URL+"publish/"+props.match.params.id,{
           marks:point,
           passing_marks:passing
-      }).then(res=>alert("Quiz Publised")).catch(err=>alert(err))
+      }).then(res=>{alert("Quiz Published")
+            props.history.push("/dashboard")
+            window.location.reload();
+    }).catch(err=>alert(err))
   }
  const handleDelete=(question)=>{
         return axios.put(API_URL+"question/"+props.match.params.id,{
@@ -37,7 +42,7 @@ function Quiz(props) {
              <h3 style={{textAlign:"center"}}>Create Quiz</h3>
              <div className="publish">
                  
-             <div><span>Point Per Question</span><input onChange={(e)=>setPoint(e.target.point)} /></div>
+             <div><span>Point Per Question</span><input onChange={(e)=>setPoint(e.target.value)} /></div>
              <div style={{marginTop:"20px"}}><span>Passing Point</span><input onChange={(e)=>setPassing(e.target.value)} /></div>
               </div>
             <div className="create_quiz">
