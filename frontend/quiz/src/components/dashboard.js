@@ -28,12 +28,12 @@ const deleteCourse=(deleteId)=>{
 
 const course=courses.map((cour)=>{
 return(
-<div class="card m-3 col-md-3">
+<div class="card m-3 col-md-5">
   <div class="card-body">
     <h4>{cour.name}</h4>
-    <p>Quiz Assigned:<b>{cour.quiz?" Yes":" No"}</b></p>
+    <p>Quiz Assigned:<b>{cour.published?" Yes":" No"}</b></p>
     <Link to={`course/${cour._id}`}><button className="m-2 btn btn-warning" >Edit</button></Link> 
-    <Link to={`course/${cour._id}/quiz`}><button className="m-2 btn btn-primary">Quiz</button></Link>
+    <Link to={`course/quiz/${cour._id}`}><button className="m-2 btn btn-primary">Quiz</button></Link>
     <button className="m-2 btn btn-danger" onClick={()=>deleteCourse(cour._id)}>Delete</button>
   </div>
 </div>

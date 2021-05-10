@@ -26,4 +26,38 @@ router.get('/question/:id',(req,res)=>{
     })
 
 })
+router.put('/question/:id',(req,res)=>{
+    let {question}= req.body;
+    Course.findById(req.params.id,(err,course)=>{
+        if(err)
+        res.status(400).json({err});
+        else{
+            const newquestion = course.question.filter(ques=>ques.questionStatement!==question);
+            course.question=newquestion;
+            course.save().then(response=>res.status(200).json(response)).catch(err=>status(400).json({err}));
+        }
+
+    })
+})
+router.put('/publish/:id',(req,res)=>{
+    let {passing_marks,marks}=req.body;
+    Course.findById(req.params.id,(err,course)=>{
+        if(err)
+        res.status(400).json({err});
+        else{
+            course.published=true;
+            course.marks=Number(marks);
+            course.passing_marks=Number(passing_marks);
+            course.save((err,course)=>{
+                if(err)
+                res.status(400).json(err);
+                else
+                {
+
+                res.status(200).json(course);
+                }
+            });
+        }
+    })
+})
 module.exports= router;
