@@ -7,6 +7,9 @@ let courseSchema = new Schema({
    },
    code:String,
    teacherName:String,
+   passing_marks:Number,
+   marks:Number,
+   published:Boolean,
    teacher:{
        type:mongoose.Schema.Types.ObjectId,
        ref:"Teacher",

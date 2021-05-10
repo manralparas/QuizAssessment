@@ -7,9 +7,9 @@ router.delete('/course/:id',(req,res)=>{
     Course.findByIdAndDelete(req.params.id).then(response=>res.status(200).json({success:true,response}))
     .catch(err=>res.status(400).json({error:err}));
 })
-router.get('/course/:id',(req,res)=>{
+router.get('/quiz/:id',(req,res)=>{
     Course.findById(req.params.id,(err,course)=>{
-        res.status(200).json(course);
+        res.status(200).json({response:course});
     })
 })
 router.put('/course/:id',(req,res)=>{
