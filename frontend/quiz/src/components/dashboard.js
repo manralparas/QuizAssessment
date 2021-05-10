@@ -57,7 +57,7 @@ return(
         </Link>
       </div>
       <div>
-      <div className="container">
+      <div className="contain">
         <h3 className="mb-2">Your course are :-</h3>
         <div className="row">
         {course}
