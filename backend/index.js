@@ -13,13 +13,21 @@ const { db } = require('./models/Student');
 //app
 const app = express();
 // db
+const connectWithRetry=()=>{
 mongoose
   .connect(process.env.DATABASE,{
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true
    })
-  .then(() => console.log('DB Connected'));
+  .then(() => console.log('DB Connected'))
+   .catch(err=>{
+     console.log(err)
+     setTimeout(connectWithRetry,5000)
+   })
+}
+
+connectWithRetry();
 //middlewares
 app.use(bodyParser.json());
 app.use(cors());
