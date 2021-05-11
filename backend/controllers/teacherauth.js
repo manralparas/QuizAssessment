@@ -11,9 +11,6 @@ exports.signup = (req, res, next) => {
       if(teacher){
          return res.status(422).json({ errors: [{ teacher: "email already exists" }] });
       }
-      else if(unique_id!=="xyz"){
-          return res.status(401).json({errors:[{teacher:"unauthorized access"}]});
-      }
       else {
          const teacher = new Teacher({
            name: name,
