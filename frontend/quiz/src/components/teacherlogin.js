@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
+import {Link} from 'react-router-dom';
 import CheckButton from "react-validation/build/button";
 import './style.css';
 
@@ -113,6 +114,7 @@ const TeacherLogin = (props) => {
           )}
           <CheckButton style={{ display: "none" }} ref={checkBtn} />
         </Form>
+        Create teacher account <Link to="/teacherSignup"><a>here</a></Link>
       </div>
    
   );
