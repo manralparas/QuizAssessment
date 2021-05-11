@@ -16,6 +16,8 @@ import EditCourse from "./components/EditCourse";
 import Quiz from "./components/Quiz";
 import NotFound from "./components/404";
 import Question from "./components/Question";
+import Attempt from "./components/Attempt";
+import TeacherSignup from "./components/TeacherRegister";
 
 const App = () => {
    const [currentUser, setCurrentUser] = useState(undefined);  
@@ -95,7 +97,7 @@ const App = () => {
               {
                   currentUser ?(
                   <div>
-                 <Link className="links" to={"/login"}>Take quiz now</Link>
+                 <Link className="links" to={"/profile"}>Take quiz now</Link>
                  <Link className="links" to={"/dashboard"}>Create quiz now</Link>
                   </div>
             
@@ -122,6 +124,8 @@ const App = () => {
           <Route exact path="/course/:id" component={EditCourse} />
           <Route exact path="/course/quiz/:id" component={Quiz} />
           <Route exact path="/course/question/:id/" component={Question} />
+          <Route exact path="/course/attempt/:id/" component={Attempt} />
+          <Route exact path="/teacherSignup" component={TeacherSignup} />
           <Route path='/404' component={NotFound} />
           <Redirect to="/404"/>
         </Switch>
