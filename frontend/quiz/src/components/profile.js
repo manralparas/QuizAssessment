@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import AuthService from "../services/auth.service";
 import { Link } from "react-router-dom";
-const API_URL = "http://localhost:8000/api/";
+import {API_URL} from '../baseurl'
 const Profile = () => {
 
   const currentUser = AuthService.getCurrentUser().message;

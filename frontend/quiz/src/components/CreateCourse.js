@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import './CreateCourseStyle.css';
 import AuthService from "../services/teacherauth.service";
 import axios from 'axios';
-const API_URL = "http://localhost:8000/api/";
+import {API_URL} from '../baseurl'
 function CreateCourse(props) {
      const currentUser = AuthService.getCurrentUser().message;
      const [name,setName]=useState("");

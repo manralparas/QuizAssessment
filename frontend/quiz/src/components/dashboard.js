@@ -3,7 +3,7 @@ import AuthService from "../services/teacherauth.service";
 import './dashboardStyle.css';
 import { Link } from "react-router-dom";
 import axios from "axios";
-const API_URL = "http://localhost:8000/api/";
+import {API_URL} from '../baseurl'
 const Dashboard = (props) => {
 
   const currentUser = AuthService.getCurrentUser().message;

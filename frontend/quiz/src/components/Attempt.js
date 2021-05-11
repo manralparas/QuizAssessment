@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import './AttemptStyle.css'
 import axios from 'axios';
 import AuthService from "../services/auth.service";
-const API_URL = "http://localhost:8000/api/";
+import {API_URL} from '../baseurl'
 let correct_answer;
 let passing_marks;
 let correct_mark;

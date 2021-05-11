@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import "./QuizStyle.css";
 import axios from 'axios';
-const API_URL = "http://localhost:8000/api/";
+import {API_URL} from '../baseurl'
 function Question(props) {
   const [question,setQuestionStatement]= useState("");
   const [correct,setCorrect] = useState("");

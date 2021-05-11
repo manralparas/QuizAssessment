@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react'
 import {Link} from 'react-router-dom';
 import './QuizStyle.css';
 import axios from 'axios';
-const API_URL = "http://localhost:8000/api/";
+import {API_URL} from '../baseurl'
 let numberOfQuestion=0;
 function Quiz(props) {
     const [point,setPoint] = useState(0);
